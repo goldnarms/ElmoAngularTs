@@ -1,6 +1,6 @@
 /*global module:false*/
 module.exports = function (grunt) {
-
+    require('load-grunt-tasks')(grunt);
     // Project configuration.
     grunt.initConfig({
         // Metadata.
@@ -36,6 +36,16 @@ module.exports = function (grunt) {
                     'css/main.css'
                 ],
                 dest: 'dist/styles.css'
+            }
+        },
+        sass: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    'main.css': 'main.scss'
+                }
             }
         },
         uglify: {
@@ -82,7 +92,7 @@ module.exports = function (grunt) {
         },
         watch: {
             gruntfile: {
-                files: ['app/**/*.js', 'app/*.js'],
+                files: ['app/**/*.js', 'app/*.js', 'css/*.scss', 'css/**/*.scss'],
                 tasks: ['jshint:gruntfile']
             },
             //lib_test: {
@@ -99,6 +109,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-ts");
 
     // Default task.
-    grunt.registerTask('default', ['ts', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('default', ['ts', 'sass', 'concat', 'uglify', 'watch']);
 
 };
