@@ -21,8 +21,21 @@ module.exports = function (grunt) {
                 dest: 'dist/app.js'
             },
             thirdParties: {
-                src: ['bower_components/angular/angular.js', 'bower_components/bootstrap/dist/js/bootstrap.js', 'bower_components/jquery/dist/jquery.js'],
+                src: [
+                    'bower_components/angular/angular.js',
+                    'bower_components/jquery/dist/jquery.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.js',
+                    'bower_components/mapbox.js/mapbox.js'
+                ],
                 dest: 'dist/thirdparties.js'
+            },
+            css: {
+                src: [
+                    'bower_components/bootstrap/dist/css/bootstrap.css',
+                    'bower_components/mapbox.js/mapbox.css',
+                    'css/main.css'
+                ],
+                dest: 'dist/styles.css'
             }
         },
         uglify: {
@@ -61,12 +74,10 @@ module.exports = function (grunt) {
             //}
         },
         ts: {
-            build: {
-                target: {
-                    reference: "./app/_localReferences.ts",
-                    src: ['app/*.ts', 'app/**/*.ts'],
-                    outDir: ''
-                }
+            target: {
+                reference: "./app/_localReferences.ts",
+                src: ['app/*.ts', 'app/**/*.ts'],
+                outDir: ''
             }
         },
         watch: {
@@ -88,6 +99,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-ts");
 
     // Default task.
-    grunt.registerTask('default', ['ts:build', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('default', ['ts', 'concat', 'uglify', 'watch']);
 
 };

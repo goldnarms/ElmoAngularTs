@@ -11,15 +11,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-        body {
-            padding-top: 50px;
-            padding-bottom: 20px;
-        }
-    </style>
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="dist/styles.css">
 </head>
 <body data-ng-app="app">
     <!--[if lt IE 7]>
@@ -27,9 +19,8 @@
     <![endif]-->
     <div class="container" data-ng-controller="homeCtrl as home">
         <h1>{{ home.message }}</h1>
+    <el-map></el-map>
     </div> <!-- /container -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
     <script src="dist/thirdparties.js"></script>
     <script src="dist/app.js"></script>
 </body>

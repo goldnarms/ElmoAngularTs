@@ -20,6 +20,18 @@
   <ItemGroup>
     <Content Include="app.css" />
     <Content Include="apple-touch-icon-precomposed.png" />
+    <Content Include="app\app.js">
+      <DependentUpon>app.ts</DependentUpon>
+    </Content>
+    <Content Include="app\Directives\map.js">
+      <DependentUpon>map.ts</DependentUpon>
+    </Content>
+    <Content Include="app\Home\homeController.js">
+      <DependentUpon>homeController.ts</DependentUpon>
+    </Content>
+    <Content Include="app\_localreferences.js">
+      <DependentUpon>_localReferences.ts</DependentUpon>
+    </Content>
     <Content Include="bower_components\angular\angular-csp.css" />
     <Content Include="bower_components\angular\angular.js" />
     <Content Include="bower_components\angular\angular.min.js" />
@@ -133,13 +145,27 @@
     <Content Include="bower_components\jquery\src\var\support.js" />
     <Content Include="bower_components\jquery\src\var\toString.js" />
     <Content Include="bower_components\jquery\src\wrap.js" />
+    <Content Include="bower_components\mapbox.js\images\icons-000000%402x.png" />
+    <Content Include="bower_components\mapbox.js\images\icons-ffffff%402x.png" />
+    <Content Include="bower_components\mapbox.js\images\icons.svg" />
+    <Content Include="bower_components\mapbox.js\images\layers-2x.png" />
+    <Content Include="bower_components\mapbox.js\images\layers.png" />
+    <Content Include="bower_components\mapbox.js\images\mapboxjs-icons-white.png" />
+    <Content Include="bower_components\mapbox.js\images\mapboxjs-icons.png" />
+    <Content Include="bower_components\mapbox.js\images\marker-icon-2x.png" />
+    <Content Include="bower_components\mapbox.js\images\marker-icon.png" />
+    <Content Include="bower_components\mapbox.js\images\marker-shadow.png" />
+    <Content Include="bower_components\mapbox.js\mapbox.css" />
+    <Content Include="bower_components\mapbox.js\mapbox.internals.js" />
+    <Content Include="bower_components\mapbox.js\mapbox.js" />
+    <Content Include="bower_components\mapbox.js\mapbox.standalone.css" />
+    <Content Include="bower_components\mapbox.js\mapbox.standalone.js" />
+    <Content Include="bower_components\mapbox.js\mapbox.standalone.uncompressed.js" />
+    <Content Include="bower_components\mapbox.js\mapbox.uncompressed.css" />
+    <Content Include="bower_components\mapbox.js\mapbox.uncompressed.js" />
     <Content Include="bower_components\underscore\.gitignore" />
     <Content Include="bower_components\underscore\underscore-min.js" />
     <Content Include="bower_components\underscore\underscore.js" />
-    <Content Include="css\bootstrap-theme.css" />
-    <Content Include="css\bootstrap-theme.min.css" />
-    <Content Include="css\bootstrap.css" />
-    <Content Include="css\bootstrap.min.css" />
     <Content Include="css\main.css" />
     <Content Include="dist\app.js" />
     <Content Include="dist\app.min.js" />
@@ -2482,7 +2508,9 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="app\app.ts" />
+    <TypeScriptCompile Include="app\Directives\map.ts" />
     <TypeScriptCompile Include="app\Home\homeController.ts" />
+    <TypeScriptCompile Include="app\Services\DataService.ts" />
     <TypeScriptCompile Include="app\_all.d.ts" />
     <TypeScriptCompile Include="app\_localReferences.ts" />
     <TypeScriptCompile Include="node_modules\grunt-ts\customcompiler\lib.core.d.ts" />
@@ -2504,6 +2532,8 @@
     <TypeScriptCompile Include="typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="typings\bootstrap\bootstrap.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="typings\leaflet\leaflet.d.ts" />
+    <TypeScriptCompile Include="typings\mapbox\mapbox.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\underscore\underscore.d.ts" />
   </ItemGroup>
@@ -2616,8 +2646,6 @@
     <Content Include="bower_components\underscore\package.json" />
     <Content Include="bower_components\underscore\README.md" />
     <Content Include="bower_components\underscore\underscore-min.map" />
-    <Content Include="css\bootstrap-theme.css.map" />
-    <Content Include="css\bootstrap.css.map" />
     <Content Include="dist\app.js.map" />
     <Content Include="dist\app.min.js.map" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -4369,6 +4397,21 @@
     <Content Include="node_modules\karma\requirejs.config.tpl.coffee" />
     <Content Include="package.json" />
     <Content Include="tsd.json" />
+    <Content Include="app\Home\homeController.js.map">
+      <DependentUpon>homeController.ts</DependentUpon>
+    </Content>
+    <Content Include="app\_localreferences.js.map">
+      <DependentUpon>_localReferences.ts</DependentUpon>
+    </Content>
+    <Content Include="app\app.js.map">
+      <DependentUpon>app.ts</DependentUpon>
+    </Content>
+    <Content Include="bower_components\mapbox.js\.bower.json" />
+    <Content Include="bower_components\mapbox.js\bower.json" />
+    <Content Include="bower_components\mapbox.js\images\render.sh" />
+    <Content Include="app\Directives\map.js.map">
+      <DependentUpon>map.ts</DependentUpon>
+    </Content>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

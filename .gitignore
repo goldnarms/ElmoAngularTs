@@ -232,4 +232,5 @@ src/Elmo/bower_components/
 src/Elmo/dist/
 src/Elmo/typings/
 *.map
-*.ts
+src/Elmo/app/*.js
+src/Elmo/app/**/*.js
