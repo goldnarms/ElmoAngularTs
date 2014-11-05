@@ -32,6 +32,8 @@
     <Content Include="app\_localreferences.js">
       <DependentUpon>_localReferences.ts</DependentUpon>
     </Content>
+    <Content Include="bower_components\angular-resource\angular-resource.js" />
+    <Content Include="bower_components\angular-resource\angular-resource.min.js" />
     <Content Include="bower_components\angular\angular-csp.css" />
     <Content Include="bower_components\angular\angular.js" />
     <Content Include="bower_components\angular\angular.min.js" />
@@ -176,6 +178,12 @@
     <Content Include="css\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
+    <Content Include="bower_components\angular-resource\.bower.json" />
+    <Content Include="bower_components\angular-resource\angular-resource.min.js.map" />
+    <Content Include="bower_components\angular-resource\bower.json" />
+    <Content Include="bower_components\angular-resource\package.json" />
+    <Content Include="bower_components\angular-resource\README.md" />
+    <None Include="data\data.geojson" />
     <Content Include="dist\app.js" />
     <Content Include="dist\app.min.js" />
     <Content Include="dist\styles.css" />
@@ -3691,7 +3699,7 @@
     <TypeScriptCompile Include="app\app.ts" />
     <TypeScriptCompile Include="app\Directives\map.ts" />
     <TypeScriptCompile Include="app\Home\homeController.ts" />
-    <TypeScriptCompile Include="app\Services\DataService.ts" />
+    <TypeScriptCompile Include="app\Services\dataService.ts" />
     <TypeScriptCompile Include="app\_all.d.ts" />
     <TypeScriptCompile Include="app\_localReferences.ts" />
     <TypeScriptCompile Include="node_modules\grunt-ts\customcompiler\lib.core.d.ts" />

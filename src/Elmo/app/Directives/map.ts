@@ -7,9 +7,9 @@ module App.Directives {
 
     export class Map implements ng.IDirective {
         public injection(): any[] {
-            return [() => { return new Map(); }];
+            return ["dataService", Map];
         }
-        static $inject = [];
+        static $inject = ["dataService"];
         public restrict: string;
         public replace: boolean;
         public template: string;
@@ -17,7 +17,7 @@ module App.Directives {
         public link: (scope: IMapScope, element: JQuery, attributes: any) => void;
         private map: L.Map;
 
-        constructor() {
+        constructor(private dataService: App.Services.IDataService) {
             this.restrict = "E";
             this.replace = true;
             this.template = "<div class='map'><div id='elmoMap'></div></div>";
@@ -33,17 +33,20 @@ module App.Directives {
         }
 
         private initMap() {
-            L.mapbox.accessToken = "pk.eyJ1IjoiZ29sZG5hcm1zIiwiYSI6IkZKWHd2ZzgifQ.spTj9MJpcjX57EbN2fUDqQ";
-            this.map = L.mapbox.map("elmoMap", "goldnarms.k531eg9d", {
-                attributionControl: false,
-                infoControl: true,
-                maxZoom: 18
-            }).setView(new L.LatLng(57.569, 1.846), 5);
+            this.dataService.loadData().then((geojson) => {
+                var geoLayer = L.mapbox.featureLayer(geojson);
+                L.mapbox.accessToken = "pk.eyJ1IjoiZ29sZG5hcm1zIiwiYSI6IkZKWHd2ZzgifQ.spTj9MJpcjX57EbN2fUDqQ";
+                this.map = L.mapbox.map("elmoMap", "goldnarms.k531eg9d", {
+                    attributionControl: false,
+                    infoControl: true,
+                    maxZoom: 18
+                }).setView(new L.LatLng(101, 0.846), 5);
+                geoLayer.addTo(this.map);
+            });
         }
 
         private updateLocation(center, zoom) {
             
         }
-
     }
 }

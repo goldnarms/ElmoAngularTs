@@ -17,25 +17,18 @@ module.exports = function (grunt) {
                 stripBanners: true
             },
             app: {
-                src: ['app/**/*.js', 'app/*.js'],
+                src: ['app/Services/*.js', 'app/Home/*.js', 'app/Directives/*.js', 'app/*.js'],
                 dest: 'dist/app.js'
             },
             thirdParties: {
                 src: [
                     'bower_components/angular/angular.js',
+                    'bower_components/angular-resource/angular-resource.js',
                     'bower_components/jquery/dist/jquery.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/mapbox.js/mapbox.js'
                 ],
                 dest: 'dist/thirdparties.js'
-            },
-            css: {
-                src: [
-                    'bower_components/bootstrap/dist/css/bootstrap.css',
-                    'bower_components/mapbox.js/mapbox.css',
-                    'css/main.css'
-                ],
-                dest: 'dist/styles.css'
             }
         },
         sass: {
@@ -45,6 +38,17 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     'main.css': 'main.scss'
+                }
+            }
+        },
+        cssmin: {
+            combine: {
+                files: {
+                    'dist/styles.css': [
+                        'bower_components/bootstrap/dist/css/bootstrap.css',
+                        'bower_components/mapbox.js/mapbox.css',
+                        'css/main.css'
+                    ]
                 }
             }
         },
@@ -107,8 +111,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks("grunt-ts");
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     // Default task.
-    grunt.registerTask('default', ['ts', 'sass', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('default', ['ts', 'sass', 'concat', 'cssmin', 'uglify', 'watch']);
+    //grunt.registerTask('prod', ['ts', 'sass', 'concat', 'cssmin', 'uglify', 'watch']);
 
 };
