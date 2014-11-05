@@ -194,8 +194,7 @@ FakesAssemblies/
 .LSOverride
 
 # Icon must end with two \r
-Icon
-
+Icon
 # Thumbnails
 ._*
 
@@ -228,3 +227,9 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+src/Elmo/.tscache/
+src/Elmo/bower_components/
+src/Elmo/dist/
+src/Elmo/typings/
+*.map
+*.ts

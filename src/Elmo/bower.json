@@ -1,0 +1,28 @@
+{
+  "name": "BoilerplateTS",
+  "version": "0.0.0",
+  "authors": [
+    "goldnarms <arnstej@gmail.com>"
+  ],
+  "description": "Boilerplate for AngularTS",
+  "keywords": [
+    "Angular",
+    "TypeScript",
+    "Boilerplate"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.3.1",
+    "bootstrap": "~3.3.0",
+    "underscore": "~1.7.0",
+    "jquery": "~2.1.1"
+  }
+}
